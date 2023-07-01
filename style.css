@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+*{
+    margin:0%;
+    padding: 0%;
+}
+
+body{
+    font-family:'Poppins' sans-serif;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,118,121,0.4906337535014006) 35%, rgba(0,212,255,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.clock{
+    background-color: rgb(49, 47, 47);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    color: #fff;
+    border: 5px solid #fff;
+    box-shadow: 0px 0px 10px rgba(255,255,255,0.7);
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+.clock ul li{
+    list-style: none;
+    position: absolute;
+    text-align: center;
+    transform: rotate(calc(30deg *var(--i)));
+    inset:5px;
+}
+
+.clock ul li span{
+    transform: rotate(calc(-30deg *var(--i)));
+    display: inline-block;
+}
+
+.clock:after{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.needle{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.needle span{
+    width: 5px;
+    height: var(--h); 
+    background-color: var(--clr);
+    position: absolute;
+    border-radius: 5px;
+}
+
+/* digital clock */
+
+.time{
+
+    margin-bottom: 40px;
+    display: flex;
+    padding: 10px 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    border: 2px solid rgba(0,0,0,0.5);
+    border-radius: 40px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    inset: 5px 5px 20px rgba(255,255,255,0.2);
+    inset: -5px -5px 15px rgba(0,0,0,0.75); 
+}
+
+.time div{
+    /* position: absolute; */
+    width: 60px;
+    text-align: center;
+    font-weight: 400;
+    color: #ff2972;
+}
+
+
+.time div:nth-child(2)::after{
+    content: ':';
+    position: absolute;
+    right: -4px;
+}
+
+.time div:last-child{
+    font-size: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+
+.time div:nth-child(2)::after{
+    animation: animated 1s steps(1) infinite;
+}
+@keyframes animated {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
